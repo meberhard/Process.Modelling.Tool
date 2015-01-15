@@ -1,5 +1,6 @@
 # SVG Modelling Tool
 This is a short documentation about the prototype of the tool. The user interface and the file structure of the tool are explained.
+[Click here](http://meberhard.me/extPath/modelling-tool/) in order for an online demonstration of the tool. (Raw link [http://meberhard.me/extPath/modelling-tool/](http://meberhard.me/extPath/modelling-tool/))
 
 ## User Interface
 ---
@@ -20,7 +21,7 @@ be printed as a heading, all symbols, which are assigned to that type are printe
 inspector shows below the symbols. On the current screen, it shows a static text, because no element is selected.
 
 The user has several options to change the current modelling language. The first option is to open the dropdown after
-"Modelling languages", which is in the middle of the top navigation bar. Opening the drodpown shows all available
+"Modelling languages", which is in the middle of the top navigation bar. Opening the dropdown shows all available
 modelling languages. If a modelling language is clicked, the tool will load the specification of the selected modelling
 language. Another option is to load a saved model. If the modelling language of a model, which is about to load, differs
 from the current selected modelling language, the tool will change the modelling language accordingly.
