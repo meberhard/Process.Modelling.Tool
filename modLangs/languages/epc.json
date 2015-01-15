@@ -1,0 +1,323 @@
+{
+    "symbols": [
+        {
+            "id": "function",
+            "cleanName": "function symbol",
+            "svgPath": "epc/node.function.svg",
+            "svgIcon": "epc/node.function.png",
+            "type": "function"
+        },
+        {
+            "id": "event",
+            "cleanName": "event symbol",
+            "svgPath": "epc/node.event.svg",
+            "svgIcon": "epc/node.event.png",
+            "type": "event"
+        },
+        {
+            "id": "pInterface",
+            "cleanName": "process interface symbol",
+            "svgPath": "epc/node.pInterface.svg",
+            "svgIcon": "epc/node.pInterface.png",
+            "type": "pInterface"
+        },
+        {
+            "id": "andOperator",
+            "cleanName": "andOperator symbol",
+            "svgPath": "epc/node.and.svg",
+            "svgIcon": "epc/node.and.png",
+            "type": "andOperator"
+        },
+        {
+            "id": "orOperator",
+            "cleanName": "orOperator symbol",
+            "svgPath": "epc/node.or.svg",
+            "svgIcon": "epc/node.or.png",
+            "type": "orOperator"
+        },
+        {
+            "id": "xorOperator",
+            "cleanName": "xorOperator symbol",
+            "svgPath": "epc/node.xor.svg",
+            "svgIcon": "epc/node.xor.png",
+            "type": "xorOperator"
+        }
+
+    ],
+    "edges": [
+        {
+            "id": "sequence",
+            "cleanName": "sequence",
+            "edgeStyle": "stroke:#000000;stroke-width:4px;marker-end: url(#markerTriangle);",
+            "type": "sequence",
+            "attributes": [
+                {
+                    "key": "name",
+                    "type": "String",
+                    "value": "The name of the sequence"
+                }
+            ]
+        }
+    ],
+    "types": {
+        "operator": {
+            "name": "operator",
+            "isAbstract": true,
+            "parentTypes": [],
+            "rules": {
+                "out": {
+                    "event": {
+                        "min": 0,
+                        "max": "*",
+                        "alert": "An operator resolves in 0..* event instances."
+                    },
+                    "function": {
+                        "min": 0,
+                        "max": "*",
+                        "alert": "An operator resolves in 0..* function instances."
+                    },
+                    "pInterface": {
+                        "min": 0,
+                        "max": "*",
+                        "alert": "An operator resolves in 0..* pInterface instances."
+                    }
+                },
+                "in": {
+                    "event": {
+                        "min": 0,
+                        "max": "*",
+                        "alert": "0..* event instances resolve in an operator instance."
+                    },
+                    "function": {
+                        "min": 0,
+                        "max": "*",
+                        "alert": "0..* function instances resolve in an operator instance."
+                    },
+                    "pInterface": {
+                        "min": 0,
+                        "max": "*",
+                        "alert": "0..* pInterface instances resolve in an operator instance."
+                    }
+                }
+            },
+            "attributes": [
+                {
+                    "key": "description",
+                    "type": "String",
+                    "value": "The name of the function"
+                }
+            ],
+            "constraints": ["constraint4"]
+        },
+        "function": {
+            "name": "function",
+            "isAbstract": false,
+            "parentTypes": [],
+            "rules": {
+                "out": {
+                    "event": {
+                        "min": 0,
+                        "max": 1,
+                        "alert": "A function resolves in 0..1 event instances."
+                    },
+                    "operator": {
+                        "min": 0,
+                        "max": 1,
+                        "alert": "A function resolves in 0..1 operator instances."
+                    }
+                },
+                "in": {
+                    "event": {
+                        "min": 0,
+                        "max": 1,
+                        "alert": "0..1 event instances resolve in a function instance."
+                    },
+                    "operator": {
+                        "min": 0,
+                        "max": 1,
+                        "alert": "0..1 operator instances resolve in a function instance."
+                    }
+                }
+            },
+            "attributes": [
+                {
+                    "key": "name",
+                    "type": "String",
+                    "value": "The name of the function"
+                }
+            ],
+            "constraints": ["constraint1","constraint5"]
+        },
+        "event": {
+            "name": "event",
+            "isAbstract": false,
+            "parentTypes": [],
+            "rules": {
+                "out": {
+                    "function": {
+                        "min": 0,
+                        "max": 1,
+                        "alert": "An event resolves in 0..1 function instances."
+                    },
+                    "pInterface": {
+                        "min": 0,
+                        "max": 1,
+                        "alert": "An event resolves in 0..1 pInterface instances."
+                    },
+                    "operator": {
+                        "min": 0,
+                        "max": 1,
+                        "alert": "An event resolves in 0..1 operator instances."
+                    }
+                },
+                "in": {
+                    "function": {
+                        "min": 0,
+                        "max": 1,
+                        "alert": "0..1 function instances resolve in an event instance."
+                    },
+                    "pInterface": {
+                        "min": 0,
+                        "max": 1,
+                        "alert": "0..1 pInterface instances resolve in an event instance."
+                    },
+                    "operator": {
+                        "min": 0,
+                        "max": 1,
+                        "alert": "0..1 operator instances resolve in an event instance."
+                    }
+                }
+            },
+            "attributes": [
+                {
+                    "key": "name",
+                    "type": "String",
+                    "value": "The name of the event"
+                }
+            ],
+            "constraints": ["constraint2","constraint6","constraint7"]
+        },
+        "pInterface": {
+            "name": "pInterface",
+            "isAbstract": false,
+            "parentTypes": [],
+            "rules": {
+                "out": {
+                    "event": {
+                        "min": 0,
+                        "max": 1,
+                        "alert": "A pInterface resolves in 0..1 event instances."
+                    },
+                    "operator": {
+                        "min": 0,
+                        "max": 1,
+                        "alert": "A pInterface resolves in 0..1 operator instances."
+                    }
+                },
+                "in": {
+                    "event": {
+                        "min": 0,
+                        "max": 1,
+                        "alert": "0..1 event instances resolve in a pInterface instance."
+                    },
+                    "operator": {
+                        "min": 0,
+                        "max": 1,
+                        "alert": "0..1 operator instances resolve in a pInterface instance."
+                    }
+                }
+            },
+            "attributes": [
+                {
+                    "key": "name",
+                    "type": "String",
+                    "value": "The name of the greySymbol"
+                }
+            ],
+            "constraints": ["constraint3","constraint5"]
+        },
+        "andOperator": {
+            "name": "andOperator",
+            "isAbstract": false,
+            "parentTypes": ["operator"],
+            "rules": {
+                "out": {},
+                "in": {}
+            },
+            "attributes": [],
+            "constraints": []
+        },
+        "orOperator": {
+            "name": "orOperator",
+            "isAbstract": false,
+            "parentTypes": ["operator"],
+            "rules": {
+                "out": {},
+                "in": {}
+            },
+            "attributes": [],
+            "constraints": []
+        },
+        "xorOperator": {
+            "name": "xorOperator",
+            "isAbstract": false,
+            "parentTypes": ["operator"],
+            "rules": {
+                "out": {},
+                "in": {}
+            },
+            "attributes": [],
+            "constraints": []
+        }
+    },
+    "constraints": [
+        {
+            "name": "constraint1",
+            "adHoc": false,
+            "path": "modLangs/languages/epc/constraints/constraint1.js",
+            "alert": "Violation constraint1: A Function should have exactly one incoming and one outgoing edge"
+        },
+        {
+            "name": "constraint2",
+            "adHoc": false,
+            "path": "modLangs/languages/epc/constraints/constraint2.js",
+            "alert": "Violation constraint2: An Event should have exactly one incoming and/or one outgoing edge"
+        },
+        {
+            "name": "constraint3",
+            "adHoc": false,
+            "path": "modLangs/languages/epc/constraints/constraint3.js",
+            "alert": "Violation constraint3: An pInterface should have exactly one incoming or one outgoing edge"
+        },
+        {
+            "name": "constraint4",
+            "adHoc": false,
+            "path": "modLangs/languages/epc/constraints/constraint4.js",
+            "alert": "Violation constraint4: An operator (and, xor, or) has either one incoming edge and many outgoing edges, or many incoming edges and one outgoing edge"
+        },
+        {
+            "name": "constraint5",
+            "adHoc": false,
+            "path": "modLangs/languages/epc/constraints/constraint5.js",
+            "alert": "Violation constraint5: Function and process interfaces can only be connected to operators, if the symbol following is an event"
+        },
+        {
+            "name": "constraint6",
+            "adHoc": false,
+            "path": "modLangs/languages/epc/constraints/constraint6.js",
+            "alert": "Violation constraint6: Events can only be connected to operators, if the symbol following the connector is either a function or process Interface"
+        },
+        {
+            "name": "constraint7",
+            "adHoc": false,
+            "path": "modLangs/languages/epc/constraints/constraint7.js",
+            "alert": "Violation constraint7: Events can not be followed by XOR or OR split operators (a split operator has 1 incoming edge and several outgoing edges)"
+        },
+        {
+            "name": "constraint8",
+            "global": true,
+            "path": "modLangs/languages/epc/constraints/constraint8.js",
+            "alert": "Violation constraint8: A process contains at least one start event and one terminal event (a start event only has an outgoing edge, while a terminal event only has an incoming edge)"
+        }
+    ]
+}

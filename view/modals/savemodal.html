@@ -1,0 +1,45 @@
+<div class="modal-header">
+    <h3 class="modal-title">Save Model</h3>
+</div>
+<div class="modal-body">
+    <p>Please enter a name and a description for the model or select a model from the dropdown. On "Save", the selected
+        model will be overwritten. Red-marked fields need to be filled before saving. Please note, that the dropdown
+        will only show save models, which use the same modelling language as the current model.</p>
+
+    <form name="saveModelForm" role="form">
+        <div class="form-group" ng-class="{'has-error': saveModelForm.modelName.$invalid}">
+
+            <label for="modelName">Model name</label><span class="text-danger"
+                                                           ng-show="saveModelForm.modelName.$error.required"> (Required)</span>
+
+            <div class="input-group">
+                <input type="text" class="form-control" id="modelName"
+                       placeholder="Enter a name or select from dropdown"
+                       ng-model="modelName" required name="modelName">
+
+                <div class="input-group-btn" dropdown>
+                    <button type="button" class="btn btn-default dropdown-toggle"><span
+                            class="caret"></span></button>
+                    <ul class="dropdown-menu pull-right" role="menu">
+                        <li ng-repeat="item in items"><a
+                                ng-click="$parent.modelName = item.key; $parent.modelInfo = item.modelInformation"
+                                href="#">{{item.key}}</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="form-group" ng-class="{'has-error': saveModelForm.modelInfo.$invalid}">
+            <label for="modelInfo">Information about the model</label><span class="text-danger"
+                                                                            ng-show="saveModelForm.modelInfo.$error.required"> (Required)</span>
+            <input type="text" class="form-control" id="modelInfo" placeholder="Enter some information about the model"
+                   ng-model="modelInfo" required name="modelInfo">
+        </div>
+    </form>
+
+</div>
+<div class="modal-footer">
+    <button ng-disabled="!saveModelForm.$valid" class="btn btn-primary" ng-click="ok(modelName, modelInfo)">
+        Save
+    </button>
+    <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+</div>

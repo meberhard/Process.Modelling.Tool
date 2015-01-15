@@ -1,0 +1,21 @@
+{
+  "name": "Prototype.02",
+  "version": "0.0.0",
+  "authors": [
+    "Moritz Eberhard <m.eberhard@meberhard.net>"
+  ],
+  "license": "MIT",
+  "homepage": "meberhard.me",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-bootstrap": "~0.11.0",
+    "bootstrap-css-only": "~3.1.1",
+    "lawnchair": "~0.6.4"
+  }
+}

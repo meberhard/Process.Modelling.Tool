@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0" y="0" width="102" height="62" viewBox="0, 0, 102, 62">
+  <g id="Layer_1">
+    <g>
+      <g id="celem">
+        <path d="M1,31 L16,1 L86,1 L101,31 L86,61 L16,61 z" fill="#FFAFFF"/>
+        <path d="M1,31 L16,1 L86,1 L101,31 L86,61 L16,61 z" fill-opacity="0" stroke="#000000" stroke-width="1"/>
+      </g>
+    </g>
+  </g>
+</svg>

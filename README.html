@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<title>SVG Modelling tool documentation</title>
+
+<xmp id="doc" theme="united" style="display:none;">
+</xmp>
+
+<script>
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.open("GET", "README.md", false);
+    xmlhttp.send();
+    console.log(xmlhttp.responseText);
+    var bodyTag = document.getElementById("doc");
+    bodyTag.innerHTML = xmlhttp.responseText;
+</script>
+<script src="http://strapdownjs.com/v/0.2/strapdown.js"></script>
+</html>

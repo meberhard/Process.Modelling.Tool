@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns="http://www.w3.org/2000/svg"
+   width="102"
+   height="62"
+   version="1.0">
+  <g pointer-events="fill">
+    <rect id="celem" x="0" y="0" width="100" height="60" stroke="black" stroke-width="1" fill="#b0b0ff" />
+    <rect id="textrect" x="8" y="0" width="84" height="60" stroke="none" fill="none" />
+	<path d="M 4 0 l 0 60" stroke="black" fill="white" stroke-width="1" />
+    <path d="M 8 0 l 0 60" stroke="black" fill="white" stroke-width="1" />
+    <path d="M 96 0 l 0 60" stroke="black" fill="white" stroke-width="1" />
+    <path d="M 92 0 l 0 60" stroke="black" fill="white" stroke-width="1" />
+    <text font-size="11" id="text" x="50" y="30" stroke="black"></text>
+  </g>
+</svg>

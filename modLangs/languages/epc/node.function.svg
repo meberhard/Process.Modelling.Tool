@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0" y="0" width="102" height="62" viewBox="0, 0, 102, 62">
+  <g id="Layer_1">
+    <g id="celem">
+      <path d="M11,1 L91,1 C96.523,1 101,5.477 101,11 L101,51 C101,56.523 96.523,61 91,61 L11,61 C5.477,61 1,56.523 1,51 L1,11 C1,5.477 5.477,1 11,1 z" fill="#96FF96"/>
+      <path d="M11,1 L91,1 C96.523,1 101,5.477 101,11 L101,51 C101,56.523 96.523,61 91,61 L11,61 C5.477,61 1,56.523 1,51 L1,11 C1,5.477 5.477,1 11,1 z" fill-opacity="0" stroke="#000000" stroke-width="1"/>
+    </g>
+  </g>
+</svg>

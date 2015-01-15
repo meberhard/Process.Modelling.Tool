@@ -1,0 +1,12 @@
+[
+    {
+        "key": "SVG circles",
+        "info": "This is just a testing sample of circles in 3 different colors. While developing this application it was used to have some minimal svg elements for testing.",
+        "pathModellingLanguages": "languages/testElements.json"
+    },
+    {
+        "key": "EPC",
+        "info": "Event-driven process chain",
+        "pathModellingLanguages": "languages/epc.json"
+    }
+]

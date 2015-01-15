@@ -1,0 +1,107 @@
+/*
+ * Base structure
+ */
+
+/* Move down content because we have a fixed navbar that is 50px tall */
+body {
+    padding-top: 50px;
+}
+
+/* FireFox fix to prevent cutting the svgworking-area */
+body, html, .container-fluid, .row, .main, #workingArea {
+    height: 100%;
+}
+
+/*
+ * Sidebar
+ */
+
+/* Hide for mobile, show later */
+.sidebar {
+    display: none;
+}
+@media (min-width: 768px) {
+    .sidebar {
+        position: fixed;
+        top: 51px;
+        bottom: 0;
+        left: 0;
+        z-index: 1000;
+        display: block;
+        padding: 20px;
+        overflow-x: hidden;
+        overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+        background-color: #f5f5f5;
+        border-right: 1px solid #eee;
+    }
+}
+
+/* Sidebar navigation */
+.nav-sidebar {
+    margin-right: -21px; /* 20px padding + 1px border */
+    margin-bottom: 20px;
+    margin-left: -20px;
+}
+.nav-sidebar > li {
+    font-size: 10px;
+    padding: 5px 20px 5px 20px;
+}
+.nav-sidebar > li > ul {
+    padding: 5px 20px 5px 10px;
+}
+.nav-sidebar .svgIcon {
+    max-height: 10px;
+    max-width: 60px;
+}
+.nav-sidebar-header {
+    font-size: 12px;
+}
+
+/*
+ * Main content
+ */
+
+.main .page-header {
+    margin-top: 0;
+}
+
+/* Alert box */
+.alert {
+    width: 60%;
+    position: fixed;
+    z-index: 9999;
+    display: block;
+    left: 25%;
+}
+
+/* Navbar dropdown */
+.navbar-nav > li > span > a {
+    color: #999;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    line-height: 20px;
+}
+
+.nav > li > span > a {
+    position: relative;
+    display: block;
+    /* padding: 15px 55px; */
+    margin: 0px 55px;
+}
+
+.nav .open > a, .nav .open > a:focus, .nav .open > a:focus {
+    background-color: #222 !important;
+}
+
+.language-loader {
+    margin: -10px 50px !important;
+}
+
+.anotherTest {
+    position: relative !important;
+    z-index: 9999 !important;
+}
+
+.ngViewport {
+    overflow: visible;
+}

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0" y="0" width="102" height="62" viewBox="0, 0, 102, 62">
+  <g id="Layer_1">
+    <g>
+      <g id="celem">
+        <path d="M21,37 L33,13 L89,13 L101,37 L89,61 L33,61 z" fill="#FFFFFF"/>
+        <path d="M21,37 L33,13 L89,13 L101,37 L89,61 L33,61 z" fill-opacity="0" stroke="#000000" stroke-width="1"/>
+      </g>
+      <g id="celem2">
+        <path d="M9,1 L73,1 C77.418,1 81,4.582 81,9 L81,41 C81,45.418 77.418,49 73,49 L9,49 C4.582,49 1,45.418 1,41 L1,9 C1,4.582 4.582,1 9,1 z" fill="#FFFFFF"/>
+        <path d="M9,1 L73,1 C77.418,1 81,4.582 81,9 L81,41 C81,45.418 77.418,49 73,49 L9,49 C4.582,49 1,45.418 1,41 L1,9 C1,4.582 4.582,1 9,1 z" fill-opacity="0" stroke="#000000" stroke-width="1"/>
+      </g>
+      <g id="u">
+        <path d="M55,51 L65,51 L65,61 L55,61 z" fill-opacity="0" stroke="#000000" stroke-width="1"/>
+        <path d="M60,51 L60,61 M55,56 L65,56" fill-opacity="0" stroke="#000000" stroke-width="1"/>
+      </g>
+    </g>
+  </g>
+</svg>

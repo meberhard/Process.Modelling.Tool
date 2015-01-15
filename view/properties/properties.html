@@ -1,0 +1,29 @@
+<form ng-if="currentSelectedElement == undefined" name="properties" role="form">
+    <div>
+        Select an element on the workspace in order to see and edit the element's attributes.
+    </div>
+</form>
+
+<form ng-if="currentSelectedElement != undefined" name="properties" role="form">
+    <div ng-repeat="attribute in currentSelectedElement.attributes" class="form-group" ng-switch on="attribute.type">
+        <label>{{attribute.key}}</label>
+        <input ng-switch-when="String" type="text" class="form-control" placeholder="{{attribute.value}}" ng-model="attribute.value">
+        <input ng-switch-when="Bool" type="checkbox" class="form-control" placeholder="{{attribute.value}}" ng-model="attribute.value" validate-attribute="{{attribute.key}}">
+        <input ng-switch-when="Integer" type="text" class="form-control" placeholder="{{attribute.value}}" ng-model="attribute.value">
+        <p class="input-group" ng-switch-when="Time">
+            <input type="text" class="form-control" datepicker-popup="yyyy/MM/dd" ng-model="attribute.value.date" is-open="openedCalendar[attribute.key]" close-text="Close" />
+            <span class="input-group-btn">
+                <button type="button" class="btn btn-default" ng-click="openCalendar($event, attribute.key)"><i class="glyphicon glyphicon-calendar"></i></button>
+            </span>
+        </p>
+        <p class="input-group" ng-switch-when="Time">
+            <timepicker ng-model="attribute.value.time" show-meridian="false"></timepicker>
+        </p>
+        <timepicker ng-switch-when="Duration" ng-model="attribute.value" show-meridian="false"></timepicker>
+    </div>
+    <div class="btn-group">
+        <button ng-click="removeElement(currentSelectedElement.id, currentSelectedElementType)" type="button" class="btn btn-danger">
+            Delete Element
+        </button>
+    </div>
+</form>

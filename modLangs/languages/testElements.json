@@ -1,0 +1,144 @@
+{
+    "symbols": [
+        {
+            "id": "orangeCircle",
+            "cleanName": "orange circle",
+            "svgPath": "testElements/orangeCircle.svg",
+            "svgIcon": "testElements/orangeCircle.png",
+            "type": "orangeSymbol"
+        },
+        {
+            "id": "blueCircle",
+            "cleanName": "blue circle",
+            "svgPath": "testElements/blueCircle.svg",
+            "svgIcon": "testElements/blueCircle.png",
+            "type": "blueSymbol"
+        },
+        {
+            "id": "greyCircle",
+            "cleanName": "grey circle",
+            "svgPath": "testElements/greyCircle.svg",
+            "svgIcon": "testElements/greyCircle.png",
+            "type": "greySymbol"
+        }
+
+    ],
+    "edges": [
+        {
+            "id": "sequence",
+            "cleanName": "sequence",
+            "edgeStyle": "stroke:#000000;stroke-width:4px;marker-end: url(#markerTriangle);",
+            "type": "sequence",
+            "attributes": [
+                {
+                    "key": "name",
+                    "type": "String",
+                    "value": "The name of the sequence"
+                }
+            ]
+        }
+    ],
+    "types": {
+        "orangeSymbol": {
+            "name": "orangeSymbol",
+            "isAbstract": false,
+            "parentTypes": [],
+            "rules": {
+                "out": {
+                    "blueSymbol": {
+                        "min": 0,
+                        "max": 1,
+                        "alert": "An orangeSymbol resolves in 0..1 blueSymbol instances."
+                    }
+                },
+                "in": {
+                    "greySymbol": {
+                        "min": 0,
+                        "max": 1,
+                        "alert": "A blueSymbol resolves in 0..1 orangeSymbol instances."
+                    }
+                }
+            },
+            "attributes": [
+                {
+                    "key": "name",
+                    "type": "String",
+                    "value": "The name of the orangeSymbol"
+                }
+            ],
+            "constraints": []
+        },
+        "blueSymbol": {
+            "name": "blueSymbol",
+            "isAbstract": false,
+            "parentTypes": [],
+            "rules": {
+                "out": {
+                    "greySymbol": {
+                        "min": 0,
+                        "max": 1,
+                        "alert": "A blueSymbol resolves in 0..1 greySymbol instances."
+                    }
+                },
+                "in": {
+                    "orangeSymbol": {
+                        "min": 0,
+                        "max": 1,
+                        "alert": "An orangeSymbol resolves in 0..1 blueSymbol instances."
+                    }
+                }
+            },
+            "attributes": [
+                {
+                    "key": "name",
+                    "type": "String",
+                    "value": "The name of the blueSymbol"
+                }
+            ],
+            "constraints": ["constraint1"]
+        },
+        "greySymbol": {
+            "name": "greySymbol",
+            "isAbstract": false,
+            "parentTypes": [],
+            "rules": {
+                "out": {
+                    "orangeSymbol": {
+                        "min": 0,
+                        "max": 1,
+                        "alert": "A greySymbol resolves in 0..1 orangeSymbol instances."
+                    }
+                },
+                "in": {
+                    "blueSymbol": {
+                        "min": 0,
+                        "max": 1,
+                        "alert": "A blueSymbol resolves in 0..1 greySymbol instances."
+                    }
+                }
+            },
+            "attributes": [
+                {
+                    "key": "name",
+                    "type": "String",
+                    "value": "The name of the greySymbol"
+                }
+            ],
+            "constraints": []
+        }
+    },
+    "constraints": [
+        {
+            "name": "constraint1",
+            "adHoc": false,
+            "path": "modLangs/languages/testElements/constraints/constraint1.js",
+            "alert": "Violation constraint1: If a blueSymbol has an incoming edge from orangeSymbol, it must have an outgoing edge to a greySymbol"
+        },
+        {
+            "name": "constraint2",
+            "global": true,
+            "path": "modLangs/languages/testElements/constraints/constraint2.js",
+            "alert": "Violation constraint2: The model needs to contain at least two instances of orangeSymbol"
+        }
+    ]
+}
